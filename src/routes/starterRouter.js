@@ -31,6 +31,7 @@ import Sweep from 'src/views/Modules/Routing/Sweep';
 
 import KMeans from 'src/views/Modules/Clustering/KMeans';
 import KPrototypes from 'src/views/Modules/Clustering/KPrototypes';
+import DecisionTree from 'src/views/Modules/Classification/DecisionTree';
 
 Vue.use(Router);
 
@@ -163,7 +164,12 @@ export default new Router({
           path: 'K-Prototypes',
           name: 'KP',
           components: { default: KPrototypes }
-        }
+        },
+        {
+          path: 'decision-tree',
+          name: 'dt',
+          components: { default: DecisionTree }
+        },
       ]
     }
   ],

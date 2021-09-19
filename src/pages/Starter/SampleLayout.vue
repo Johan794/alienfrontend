@@ -7,7 +7,7 @@
       short-title="CT"
       title="VIP - Alien"
     >
-      <template slot-scope="props" slot="links">
+      <template slot="links">
         <!-- <sidebar-item
           :link="{
             name: $t('sidebar.dashboard'),
@@ -188,8 +188,21 @@
               name: $t('K-Prototypes'),
               path: '/k-prototypes'
             }"
+            
           ></sidebar-item>
         ></sidebar-item>
+        <sidebar-item
+          :link="{
+            name: $t('Classification'),
+            icon: 'tim-icons icon-scissors' 
+          }"
+          ><sidebar-item
+            :link="{
+              name: $t('DecisionTree'),
+              path: '/decision-tree'
+            }"
+          ></sidebar-item>
+        </sidebar-item>
       </template>
     </side-bar>
     <div class="main-panel" :data="sidebarBackground">
