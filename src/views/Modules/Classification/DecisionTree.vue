@@ -30,14 +30,44 @@
             <base-button type="primary" @click.native="modals.notice = true">Submit predefined</base-button>
             </el-tooltip>
         </div>
-        <div class="row" align="right">
-              <label class="col-sm-2 col-form-label" style="font-size: 0.05 rem" align="right">N# Folds</label>
+        <div align="right">
+          <div class="col-sm-8">
+            <label class="col-sm-2 col-form-label" style="font-size: 0.05 rem" align="right">N# Folds</label>
+            <el-tooltip
+                  content="Type the max depth"
+                  effect="light"
+                  :open-delay="300"
+                  placement="top"
+                >
+              <input v-model="message" placeholder="0">
+            </el-tooltip>
+          </div>
         </div>
-        <div class="row" align="right">
+        <div align="right">
+            <div class="col-sm-8">
               <label class="col-sm-2 col-form-label" style="font-size: 0.05 rem" align="right">Max Depth</label>
+              <el-tooltip
+                  content="Type the max depth"
+                  effect="light"
+                  :open-delay="300"
+                  placement="top"
+                >
+              <input v-model="m2" placeholder="0">
+              </el-tooltip>
+            </div>
         </div>
-        <div class="row" align="right">
+        <div align="right">
+          <div class="col-sm-8">
               <label class="col-sm-2 col-form-label" style="font-size: 0.05 rem" align="right">Min size</label>
+              <el-tooltip
+                  content="Type the max depth"
+                  effect="light"
+                  :open-delay="300"
+                  placement="top"
+                >
+              <input v-model="m3" placeholder="0">
+            </el-tooltip>
+          </div>
         </div>
         <div id="mygraph">
         <input class="col-sm-12 btn btn-outline-danger expand" type="button" v-on:click="nextStep" value="Next">
