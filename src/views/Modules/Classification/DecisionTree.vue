@@ -37,6 +37,7 @@
               <!--
                   Aquí esta la parte derecha donde esta el texto y los cuadros para llenar
               -->
+          </div>
             <div class="row" align="right">
               <label class="col-sm-2 col-form-label" style="font-size: 0.05 rem">N# Folds</label>
 
@@ -84,6 +85,7 @@
                 </el-tooltip>
               </div>
             </div>
+            </div>
             <div class="row"></div>
           </div>
         </card>
@@ -94,6 +96,7 @@
     -->
     <div id="mygraph"></div>
     <input class="col-sm-12 btn btn-outline-danger expand" type="button" v-on:click="nextStep" value="Next">
+    </div>
 </template>
 <script>
 

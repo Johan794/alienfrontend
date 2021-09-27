@@ -194,7 +194,7 @@
         <sidebar-item
           :link="{
             name: $t('Classification'),
-            icon: 'tim-icons icon-vector' 
+            icon: 'tim-icons icon-shape-star' 
           }"
           ><sidebar-item
             :link="{
