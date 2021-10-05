@@ -12,6 +12,35 @@
     <div>
         <div>
             <h1 class="text-center"> DECISION TREE </h1>
+            <h2>What is a Decision Tree ?</h2>
+             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat est ullam distinctio officia aut non libero facilis cumque ab incidunt itaque tempora, magni debitis impedit officiis doloremque. Hic, accusamus deleniti.</p>
+            <br>
+            <h2> These are its main features</h2>
+            <article>
+              <ul>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad praesentium suscipit consequuntur unde aperiam, soluta odio assumenda asperiores sed sunt optio similique nisi minus consectetur voluptatum molestias. Quia, porro reiciendis?</li>
+                <li>Dolor nostrum veritatis, atque in sed vel quod maxime quis sunt natus cupiditate consectetur iure culpa. Dolor officiis nam, vel vero deleniti veritatis temporibus? Ullam explicabo optio dignissimos ducimus quas.</li>
+                <li>Asperiores tempora illo reiciendis facilis? Sit dolore omnis maxime laborum debitis repellat esse impedit mollitia deserunt error facilis cum natus rem praesentium voluptate at, sint rerum consequatur, soluta et accusamus?</li>
+                <li>Commodi laboriosam ab distinctio illo tempora ullam molestias suscipit quaerat dicta voluptates temporibus facere in rerum, iusto accusantium. Doloribus animi facilis voluptas minima fuga ex eos voluptates odio quia asperiores?</li>
+                <li>Minus pariatur ipsa ipsam. Temporibus reprehenderit autem eligendi veritatis veniam dolorum magni delectus commodi suscipit quidem, natus laboriosam. Vero sequi et quae libero voluptates temporibus. Suscipit tempore corporis velit quas.</li>
+              </ul>
+            </article>
+            <br>
+            <h2>What kind of trees can we find?</h2>
+            <ul>
+              <li><h3>Calssfication Tree</h3></li>
+              <li><h3>Regression Tree</h3></li>  
+            </ul>
+
+            <br>
+            
+            <h2>What about this implementation?</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dicta obcaecati at, earum eius possimus voluptates dolorem incidunt velit illum ad repellat, magnam quisquam aliquid tenetur eaque recusandae modi excepturi.</p>
+     
+           <br>
+
+           <h2 class="text-center">Classsfication Tree</h2>
+
         </div>
         <div class="col-lg-12" align="center">
         <div class="text-left">
@@ -94,6 +123,5 @@ export default {
 }
 
 </script>
-
 <style>
 </style>
