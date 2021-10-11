@@ -47,29 +47,33 @@
             <el-tooltip
             content="Upload your own dataset" effect="light" :open-delay="300" placement="top">
             <el-input type="file" class="col-md-5 my-1" outlined id="external"></el-input>
-            <base-button type="primary" @click.native="modals.notice = true">Submit yours</base-button>
+            <base-button type="primary" @click.native="modals.notice = true" style="width:500px;">Submit yours</base-button>
             </el-tooltip>
-        </div>
-        </div>
-        <br />
-        <div class="text-left">
-            <el-tooltip
-            content="Upload the given dataset" effect="light" :open-delay="300" placement="top">
-            <el-input type="file" class="col-md-5 my-1" outlined id="predefined"></el-input>
-            <base-button type="primary" @click.native="modals.notice = true">Submit predefined</base-button>
-            </el-tooltip>
-        </div>
-        <div align="right">
-          <div class="col-sm-8">
             <label class="col-sm-2 col-form-label" style="font-size: 0.05 rem" align="right">N# Folds</label>
             <el-tooltip
-                  content="Type the max depth"
+                  content="Type the number of folds"
                   effect="light"
                   :open-delay="300"
                   placement="top"
                 >
               <input v-model="message" placeholder="0">
             </el-tooltip>
+            <br />
+            <el-tooltip
+            content="Upload the given dataset" effect="light" :open-delay="300" placement="top">
+            <el-input type="file" class="col-md-5 my-1" outlined id="predefined"></el-input>
+            <base-button type="primary" @click.native="modals.notice = true" style="width:500px;">Submit predefined</base-button>
+            </el-tooltip>
+            
+        </div>
+        </div>
+        <br />
+        <div class="text-left">
+            
+        </div>
+        <div align="right">
+          <div class="col-sm-8">
+            
           </div>
         </div>
         <div align="right">
@@ -89,7 +93,7 @@
           <div class="col-sm-8">
               <label class="col-sm-2 col-form-label" style="font-size: 0.05 rem" align="right">Min size</label>
               <el-tooltip
-                  content="Type the max depth"
+                  content="Type the minimum size"
                   effect="light"
                   :open-delay="300"
                   placement="top"
@@ -124,4 +128,7 @@ export default {
 
 </script>
 <style>
+button{
+  min-width:100px
+}
 </style>
