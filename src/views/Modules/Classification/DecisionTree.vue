@@ -4,25 +4,16 @@
   height: 500px;
   border: 1px solid lightgray;
   background: #d1d1d1;
-
- 
 }
-
 .tree {
   height: 800px;
 }
-
-
-
 #container{
    width: 400;
    height: 400px;
    display: flex;
    align-items: center;
 }
-
-
-
 </style>
 <script
   type="text/javascript"
@@ -38,15 +29,59 @@
       <el-tooltip
         content="Know more about decision trees"
         effect="light"
-        :open-delay="200"
+        :open-delay="300"
         placement="top"
       >
-        <base-button type="primary" @click.native="modals.notice = true">About</base-button>
+        <base-button type="primary" @click.native="modals.notice = true"> About Decision Tree
+        </base-button>
       </el-tooltip>
-    </div>
     
-  </div>
-        <div class="col-lg-12" align="center">
+      <modal :show.sync="modals.notice">
+        <template slot="header">
+          <h5 slot="header" class="title">What is a decision tree? </h5>
+        </template>
+        <div class="instruction">
+        <div class="row">
+          <strong>
+            <i class="tim-icons icon-book-bookmark text-primary"></i>What is it?
+          </strong>
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dicta obcaecati at,
+            earum eius possimus voluptates dolorem incidunt velit illum ad repellat, magnam quisquam
+            aliquid tenetur eaque recusandae modi excepturi.
+          </p>
+        </div>
+        </div>
+        <div class="instruction">
+        <div class="row">
+          <strong>
+            <i class="tim-icons icon-notes text-info"></i>These are its main features
+          </strong>
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dicta obcaecati at,
+            earum eius possimus voluptates dolorem incidunt velit illum ad repellat, magnam quisquam
+            aliquid tenetur eaque recusandae modi excepturi.
+          </p>
+        </div>
+        </div>
+        <div class="instruction">
+        <div class="row">
+          <strong>
+            <i class="tim-icons icon-paper text-success"></i>What kind of trees can we find?
+          </strong>
+          <p class="description">
+            After you choose the type of system to control the inventory, you will need to fill the information required.
+            The program gives the outputs associated to the system selected.
+          </p>
+        </div>
+        </div>
+        <div slot="footer" class="justify-content-center">
+        <base-button type="primary" round @click.native="modals.notice = false">Finish</base-button>
+        </div>
+      </modal>
+    </div>
+    </div>
+    <div class="col-lg-12" align="center">
         <div class="text-left">
             <el-tooltip
             content="Upload your own dataset" effect="light" :open-delay="300" placement="top">
@@ -133,20 +168,19 @@
 </template>
 
 <script>
+import { Modal, BaseAlert } from "src/components";
 import { tree } from 'vued3tree'
 import { treeData } from 'src/views/Modules/Classification/Data.json'
 export default {
 
   components: {
     tree,
+    Modal
   },
 
   data() {
     return {
-
    //  treeData: treeData
-     
-      
        treeData: {
 
             name: "Padre",
@@ -160,9 +194,14 @@ export default {
                     children: [{name: "Nieto 3"}, {name: "Nieto 4"}]
                 }
             ]
+        },
+        
+        modals: {
+        notice: false,
+        sq: false,
+        ss: false,
+        rs: false
         }
-        
-        
         
         
     };
