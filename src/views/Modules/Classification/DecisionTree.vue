@@ -133,7 +133,7 @@
          layoutType="vertical" 
          :marginX = "30" 
          :marginY = "30"
-         :radius = "8"
+         :radius = "10"
          :type = "tree"
          :nodeTextMargin = "6"
          :leafTextMargin = " 6 "
@@ -141,10 +141,8 @@
          class="tree"
          >
          </tree>
-          
-      
-      </div>
-
+         
+         </div>
         </div>
     </div>
   </div>
@@ -161,10 +159,7 @@ export default {
 
   data() {
     return {
-
-   //  treeData: treeData
-     
-      
+   //  treeData: treeData   
        treeData: {
 
             name: "Padre",
@@ -178,11 +173,7 @@ export default {
                     children: [{name: "Nieto 3"}, {name: "Nieto 4"}]
                 }
             ]
-        }
-        
-        
-        
-        
+        }        
     };
   },
 
