@@ -32,8 +32,7 @@
         :open-delay="300"
         placement="top"
       >
-        <base-button type="primary" @click.native ="modals.notice= true"> About Decision Tree
-        </base-button>
+        <base-button type="primary" @click.native="modals.notice = true"> About Decision Tree </base-button>
       </el-tooltip>
     
       <modal :show.sync="modals.notice" footerClasses="justify-content-center" type="notice">
@@ -70,17 +69,18 @@
             <i class="tim-icons icon-paper text-success"></i>What kind of trees can we find?
           </strong>
           <p class="description">
-            After you choose the type of system to control the inventory, you will need to fill the information required.
-            The program gives the outputs associated to the system selected.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dicta obcaecati at,
+            earum eius possimus voluptates dolorem incidunt velit illum ad repellat, magnam quisquam
+            aliquid tenetur eaque recusandae modi excepturi.
           </p>
         </div>
         </div>
         <div slot="footer" class="justify-content-center">
-        <base-button type="primary" round @click.native="modals.notice = false">Finish</base-button>
+          <base-button type="primary" round @click.native="modals.notice = false">Finish</base-button>
         </div>
       </modal>
     </div>
-    </div>
+    <br>
     <div class="col-lg-12" align="center">
         <div class="text-left">
             <el-tooltip
@@ -159,10 +159,10 @@
          class="tree"
          >
          </tree>
-         
-         </div>
+      </div>
         </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -174,7 +174,9 @@ export default {
   components: {
     tree,
     Modal,
+    BaseAlert,
     Data
+
   },
 
   data() {
@@ -212,12 +214,8 @@ export default {
   },
 
   methods: {
-  
     metodo1() {
-      
     },
-
-    
   }
 };
 </script>
@@ -227,4 +225,3 @@ button{
   min-width:100px
 }
 </style>
-
