@@ -1,0 +1,31 @@
+{
+    "name": 0.3292,
+    "children":[
+        {
+         "name":8.1881 ,
+          "children":[
+              {
+                 "name":-0.39816,
+                 "children":[{"name":1.0},{"name":1.0}]
+              },
+              {
+                "name":-2.7419,
+                "children":[{"name":1.0},{"name":0.0}]
+              }
+          ] 
+        },
+        {
+          "name":-4.2931,
+          "children":[
+              {
+                  "name":4.2899,
+                  "children":[{"name":1.0},{"name":0.0}]
+              },
+              {
+                 "name":0.85574,
+                 "children":[{"name":0.0},{"name":0.0}]
+              }
+          ]
+        }
+    ]
+}
