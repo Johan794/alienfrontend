@@ -8,11 +8,41 @@
 .tree {
   height: 800px;
 }
-#container{
-   width: 400;
-   height: 400px;
-   display: flex;
-   align-items: center;
+#container {
+  width: 400;
+  height: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.event-selected {
+  width: 400;
+  height: 200px;
+  border: 2px solid lightgray;
+  margin: 50px 500px;
+}
+
+.heading-event {
+  margin: 20px;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gainsboro;
+}
+
+.information-event {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.label-data {
+  margin: 10px;
+}
+
+input {
+  text-align: center;
 }
 
 .modal {
@@ -33,7 +63,6 @@
   src="https://visjs.github.io/vis-network/standalone/umd/vis-network.min.js"
 ></script>
 <template>
-<div>
   <div>
     <div class="col-12" align="center">
       <h1> DECISION TREE </h1>
@@ -66,62 +95,88 @@
             </el-tooltip>
             
         </div>
-        </div>
-        <br />
-        <div class="text-left">
-            
-        </div>
-        <div align="right">
-          <div class="col-sm-8">
-            
-          </div>
-        </div>
-        <div align="right">
-            <div class="col-sm-8">
-              <label class="col-sm-2 col-form-label" style="font-size: 0.05 rem" align="right">Max Depth</label>
-              <el-tooltip
-                  content="Type the max depth"
-                  effect="light"
-                  :open-delay="300"
-                  placement="top"
-                >
-              <input v-model="m2" placeholder="0">
-              </el-tooltip>
-            </div>
-        </div>
-        <div align="right">
-          <div class="col-sm-8">
-              <label class="col-sm-2 col-form-label" style="font-size: 0.05 rem" align="right">Min size</label>
-              <el-tooltip
-                  content="Type the minimum size"
-                  effect="light"
-                  :open-delay="300"
-                  placement="top"
-                >
-              <input v-model="m3" placeholder="0">
-            </el-tooltip>
-          </div>
-        </div>
-        <div id="mygraph">
-        <input class="col-sm-12 btn btn-outline-danger expand" type="button" v-on:click="nextStep" value="Next">
-        <div id="container"> 
-         
-       <tree :data="treeData"
-         node-text="name" 
-         duration="750" 
-         layoutType="vertical" 
-         :marginX = "30" 
-         :marginY = "30"
-         :radius = "10"
-         :type = "tree"
-         :nodeTextMargin = "6"
-         :leafTextMargin = " 6 "
-         :zoomable = "true"
-         class="tree"
-         >
-         </tree>
       </div>
+      <br />
+      <div class="text-left"></div>
+      <div align="right">
+        <div class="col-sm-8"></div>
+      </div>
+      <div align="right">
+        <div class="col-sm-8">
+          <label
+            class="col-sm-2 col-form-label"
+            style="font-size: 0.05 rem"
+            align="right"
+            >Max Depth</label
+          >
+          <el-tooltip
+            content="Type the max depth"
+            effect="light"
+            :open-delay="300"
+            placement="top"
+          >
+            <input v-model="m2" placeholder="0" />
+          </el-tooltip>
         </div>
+      </div>
+      <div align="right">
+        <div class="col-sm-8">
+          <label
+            class="col-sm-2 col-form-label"
+            style="font-size: 0.05 rem"
+            align="right"
+            >Min size</label
+          >
+          <el-tooltip
+            content="Type the minimum size"
+            effect="light"
+            :open-delay="300"
+            placement="top"
+          >
+            <input v-model="m3" placeholder="0" />
+          </el-tooltip>
+        </div>
+      </div>
+      <div id="mygraph">
+        <input
+          class="col-sm-12 btn btn-outline-danger expand"
+          type="button"
+          v-on:click="nextStep"
+          value="Next"
+        />
+        <div id="container">
+          <tree
+            :data="treeData"
+            node-text="name"
+            duration="750"
+            layoutType="vertical"
+            :marginX="30"
+            :marginY="30"
+            :radius="10"
+            :type="tree"
+            :nodeTextMargin="6"
+            :leafTextMargin="6"
+            :zoomable="true"
+            class="tree"
+          >
+          </tree>
+        </div>
+      </div>
+      <div class="event-selected">
+        <div class="heading-event">Información del nodo seleccionado</div>
+        <div class="information-event">
+          <p class="label-data">Nombre del nodo:</p>
+          <form>
+            <input type="text" placeholder="Informacion" />
+          </form>
+        </div>
+        <div class="information-event">
+          <p class="label-data">Información del nodo:</p>
+          <form>
+            <input type="text" placeholder="Data" />
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -196,7 +251,7 @@ export default {
 </script>
 
 <style>
-button{
-  min-width:100px
+button {
+  min-width: 100px;
 }
 </style>
