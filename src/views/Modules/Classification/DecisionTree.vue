@@ -14,6 +14,19 @@
    display: flex;
    align-items: center;
 }
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
+  z-index: 101;
+}
+
 </style>
 <script
   type="text/javascript"
@@ -26,59 +39,7 @@
       <h1> DECISION TREE </h1>
     </div>
     <div class="col-12" align="center">
-      <el-tooltip
-        content="Know more about decision trees"
-        effect="light"
-        :open-delay="300"
-        placement="top"
-      >
-        <base-button type="primary" @click.native="modals.notice = true"> About Decision Tree </base-button>
-      </el-tooltip>
-    
-      <modal :show.sync="modals.notice" footerClasses="justify-content-center" type="notice">
-        <template slot="header">
-         <h5 slot="header" class="title">What is a decision tree? </h5>
-        </template>
-        <div class="instruction">
-        <div class="row">
-          <strong>
-            <i class="tim-icons icon-book-bookmark text-primary"></i>What is it?
-          </strong>
-          <p class="description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dicta obcaecati at,
-            earum eius possimus voluptates dolorem incidunt velit illum ad repellat, magnam quisquam
-            aliquid tenetur eaque recusandae modi excepturi.
-          </p>
-        </div>
-        </div>
-        <div class="instruction">
-        <div class="row">
-          <strong>
-            <i class="tim-icons icon-notes text-info"></i>These are its main features
-          </strong>
-          <p class="description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dicta obcaecati at,
-            earum eius possimus voluptates dolorem incidunt velit illum ad repellat, magnam quisquam
-            aliquid tenetur eaque recusandae modi excepturi.
-          </p>
-        </div>
-        </div>
-        <div class="instruction">
-        <div class="row">
-          <strong>
-            <i class="tim-icons icon-paper text-success"></i>What kind of trees can we find?
-          </strong>
-          <p class="description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dicta obcaecati at,
-            earum eius possimus voluptates dolorem incidunt velit illum ad repellat, magnam quisquam
-            aliquid tenetur eaque recusandae modi excepturi.
-          </p>
-        </div>
-        </div>
-        <div slot="footer" class="justify-content-center">
-          <base-button type="primary" round @click.native="modals.notice = false">Finish</base-button>
-        </div>
-      </modal>
+      <base-button type="primary" v-on:click = "showModal"> About Decision Tree </base-button>
     </div>
     <br>
     <div class="col-lg-12" align="center">
@@ -86,7 +47,7 @@
             <el-tooltip
             content="Upload your own dataset" effect="light" :open-delay="300" placement="top">
             <el-input type="file" class="col-md-5 my-1" outlined id="external"></el-input>
-            <base-button type="primary" @click.native="modals.notice = true" style="width:500px;">Submit yours</base-button>
+            <base-button type="primary" @click ="showModal = true" style="width:500px;">Submit yours</base-button>
             </el-tooltip>
             <label class="col-sm-2 col-form-label" style="font-size: 0.05 rem" align="right">N# Folds</label>
             <el-tooltip
@@ -101,7 +62,7 @@
             <el-tooltip
             content="Upload the given dataset" effect="light" :open-delay="300" placement="top">
             <el-input type="file" class="col-md-5 my-1" outlined id="predefined"></el-input>
-            <base-button type="primary" @click.native="modals.notice = true" style="width:500px;">Submit predefined</base-button>
+            <base-button type="primary" style="width:500px;">Submit predefined</base-button>
             </el-tooltip>
             
         </div>
@@ -166,22 +127,37 @@
 </template>
 
 <script>
-import { Modal, BaseAlert } from "src/components";
+import {BaseAlert } from "src/components";
 import { tree } from 'vued3tree'
-import  Data  from 'src/views/Modules/Classification/tree.json'
-export default {
+import Data from 'src/views/Modules/Classification/tree.json'
+import Vue from "vue"
+import Swal from 'sweetalert2'
+import VueSimpleAlert from "vue-simple-alert";
 
+
+Vue.use(VueSimpleAlert);
+export default {
   components: {
     tree,
-    Modal,
     BaseAlert,
-    Data
-
+    Data,
+    Swal
   },
 
   data() {
     return {
        treeData: Data,
+       showModal: function (event) {
+          const Swal = require('sweetalert2')
+          Swal.fire({
+            title: 'Decision Trees',
+            imageUrl: 'https://fhernanb.github.io/libro_mod_pred/images/fit_unfit.png',
+            imageAlt: 404,
+            imageHeight: 312,
+            text: 'A decision tree is a map of the possible outcomes of a series of related decisions. A decision tree usually starts with a single node and then branches into possible outcomes. Each of those outcomes creates additional nodes, which branch into other possibilities. This gives it a tree-like shape.',
+            imageAlt: 'A tall image'
+          })
+       }
       /*
        treeData: {
 
@@ -199,17 +175,14 @@ export default {
         },
         */
 
-        modals: {
+        /*modals: {
          notice: false  
-         /*
+         
          sq: false,
          ss: false,
          rs: false
-         */
         }
-        
-        
-        
+        */
     };
   },
 
@@ -217,6 +190,8 @@ export default {
     metodo1() {
     },
   }
+
+  
 };
 </script>
 
